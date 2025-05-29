@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useLocation, useWindowScroll } from 'react-use'
 import gsap from "gsap";
 import { useGSAP } from '@gsap/react'
-import Logo from '../../Elements/Logo';
+import Logo from '../../elements/Logo';
 import CutElement from '../../elements/CutElement';
 import Searchbar from '../Searchbar/Searchbar';
 import NavigateContext from '../../contexts/NavigateContext';
