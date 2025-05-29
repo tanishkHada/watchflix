@@ -1,0 +1,35 @@
+/movie/now_playing
+/movie/popular
+/movie/top_rated
+/trending/movie/week
+/movie/{movie_id} -> details
+/movie/{movie_id}/credits -> cast and crew details
+/movie/{movie_id}/images -> backdrops, logos, posters
+/movie/{movie_id}/recommendations
+/movie/{movie_id}/reviews
+/movie/{movie_id}/similar
+/movie/{movie_id}/videos
+/discover/movie/?with_genres=<genre_ids comma separated> -> discover movies based on genres, keywords, etc.
+
+/tv/popular
+/tv/top_rated
+/trending/tv/week
+/tv/{series_id} -> details
+/tv/{series_id}/credits -> cast and crew details
+/tv/{series_id}/images
+/tv/{series_id}/recommendations
+/tv/{series_id}/reviews
+/tv/{series_id}/similar
+/tv/{series_id}/videos
+/tv/{series_id}/season/{season_number} -> season details along with array of episodes details
+/tv/{series_id}/season/{season_number}/videos -> get season videos
+/discover/tv/?with_genres=<genre_ids comma separated> -> discover tv shows based on genres, keywords, etc.
+
+/search/multi/?query=<movie name/tv show name> -> search by name
+
+https://image.tmdb.org/t/p/{size}{path} -> get image, 
+size = original, path = '/path.jpg'
+
+https://youtube.com/embed/{key} -> embed videos
+
+

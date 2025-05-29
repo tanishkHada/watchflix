@@ -1,0 +1,146 @@
+@layer base {
+    @font-face {
+        font-family: 'humane';
+        src: url('/fonts/Humane-Bold.otf');
+    }
+
+    @font-face {
+        font-family: 'rockstar';
+        src: url('/fonts/Rockstar-ExtraBold.otf');
+    }
+
+    @font-face {
+        font-family: 'aalto';
+        src: url('/fonts/Aalto-Display-Personal-use.otf');
+    }
+
+    @font-face {
+        font-family: 'mango-bold';
+        src: url('/fonts/MangoGrotesque-Bold.otf');
+    }
+
+    @font-face {
+        font-family: 'mango-regular';
+        src: url('/fonts/MangoGrotesque-Regular.otf');
+    }
+
+    @font-face {
+        font-family: 'saoTorpes';
+        src: url('/fonts/SaoTorpes.otf');
+    }
+
+    @font-face {
+        font-family: 'kalmansk';
+        src: url('/fonts/Kalmansk-Regular.otf');
+    }
+
+    @font-face {
+        font-family: 'clash-bold';
+        src: url('/fonts/ClashDisplay-Bold.otf');
+    }
+
+    @font-face {
+        font-family: 'clash-regular';
+        src: url('/fonts/ClashDisplay-Regular.otf');
+    }
+
+    @font-face {
+        font-family: 'clash-semibold';
+        src: url('/fonts/ClashDisplay-Semibold.otf');
+    }
+
+    @font-face {
+        font-family: 'poppins-light';
+        src: url('/fonts/Poppins-Light.ttf');
+    }
+
+    @font-face {
+        font-family: 'poppins-regular';
+        src: url('/fonts/Poppins-Regular.ttf');
+    }
+
+    @font-face {
+        font-family: 'montserrat-light';
+        src: url('/fonts/Montserrat-Light.ttf');
+    }
+
+    @font-face {
+        font-family: 'montserrat-medium';
+        src: url('/fonts/Montserrat-Medium.ttf');
+    }
+
+    @font-face {
+        font-family: 'montserrat-regular';
+        src: url('/fonts/Montserrat-Regular.ttf');
+    }
+
+    .font-humane{
+        font-family: 'humane', sans-serif;
+    }
+
+    .font-rockstar{
+        font-family: 'rockstar', sans-serif;
+    }
+
+    .font-aalto{
+        font-family: 'aalto', sans-serif;
+    }
+
+    .font-mango-bold{
+        font-family: 'mango-bold', sans-serif;
+    }
+    
+    .font-mango-regular{
+        font-family: 'mango-regular', sans-serif;
+    }
+
+    .font-saoTorpes{
+        font-family: 'saoTorpes',
+        sans-serif;
+    }
+
+    .font-kalmansk{
+        font-family: 'kalmansk',
+        sans-serif;
+    }
+
+    .font-clash-bold{
+        font-family: 'clash-bold',
+        sans-serif;
+    }
+
+    .font-clash-regular{
+        font-family: 'clash-regular',
+        sans-serif;
+    }
+
+    .font-clash-semibold{
+        font-family: 'clash-semibold',
+        sans-serif;
+    }
+
+    .font-poppins-light{
+        font-family: 'poppins-light', 
+        sans-serif;
+    }
+
+    .font-poppins-regular{
+        font-family: 'poppins-regular', 
+        sans-serif;
+    }
+
+    .font-montserrat-light{
+        font-family: 'montserrat-light', 
+        sans-serif;
+    }
+
+    .font-montserrat-medium{
+        font-family: 'montserrat-medium', 
+        sans-serif;
+    }
+
+    .font-montserrat-regular{
+        font-family: 'montserrat-regular', 
+        sans-serif;
+    }
+}

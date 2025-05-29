@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+@import './fonts.css';
+@import './global.css';
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100vh;
+        background-color: black;
+
+        font-family: 'montserrat-regular';
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--bright-lavender);
+        border-radius: 10px;
+    }   
+}
+
+@layer utilities {
+    .absolute-center {
+        @apply absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%];
+    }
+
+    .floating-nav {
+        @apply bg-[var(--lime-green)] transition-colors duration-500 ease-in-out text-black;
+    }
+
+    .transparent-nav {
+        @apply bg-transparent transition-colors duration-500 ease-in-out;
+    }
+
+    .indicator-line {
+        @apply h-3 w-[2px] rounded-full transition-all duration-200 ease-in-out origin-bottom;
+    }
+
+    .selected-watch-item {
+        @apply bg-[var(--lime-green)] text-black transition-all duration-300 ease-in
+    }
+
+    .indicator-line.active {
+        animation: indicator-line 0.5s ease infinite;
+    }
+
+    .selected-genre-type{
+        @apply text-[var(--lime-green)] border-[var(--lime-green)]
+    }
+
+    .not-selected-genre-type{
+        @apply text-[var(--hot-pink)] border-[var(--hot-pink)]
+    }
+
+    .selected-genre{
+        @apply text-[var(--lime-green)] border-[var(--lime-green)] 
+    }
+
+    .not-selected-genre{
+        @apply text-[var(--bright-lavender)] border-[var(--bright-lavender)]
+    }
+}
+
+
+@keyframes indicator-line {
+    0% {
+        height: 4px;
+        transform: translateY(-0px);
+    }
+
+    50% {
+        height: 16px;
+        transform: translateY(-0px);
+    }
+
+    100% {
+        height: 4px;
+        transform: translateY(-0px);
+    }
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
