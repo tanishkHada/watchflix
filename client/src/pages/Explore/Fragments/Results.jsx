@@ -51,7 +51,7 @@ function Results({ apiData, updatePageNumber, newLoading, nextPageLoading, noRes
         )
             : !noResultsFound ? (
                 <div
-                    className="container flex flex-col gap-5 items-center">
+                    className="flex flex-col gap-5 items-center">
                     <div className='w-full h-full flex flex-wrap justify-center items-center gap-10'>
                         {data.map((item, ind) => (
                             <Card
