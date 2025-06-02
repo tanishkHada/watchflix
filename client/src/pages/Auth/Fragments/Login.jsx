@@ -48,8 +48,6 @@ function Login({ onSwitch, authViews }) {
       setLoading(true);
       const res = await authService.login(formData);
       if (res.success) {
-        // localStorage.setItem('logged_in', true);
-        console.log('logged in');
         onNavigate(redirectTo);
       }
     } catch (error) {

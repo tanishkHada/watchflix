@@ -232,7 +232,7 @@ function Hero({data}) {
 
                 {/* details */}
                 <div className='absolute h-screen z-15 w-full flex justify-center items-center
-                bg-gradient-to-b from-[#ffffff00] to-[#1e293b]'>
+                bg-gradient-to-b from-[#ffffff00] to-[#1e293b99]'>
 
                     <div className='h-full w-full flex flex-col items-center justify-center p-10 sm:items-start'>
                         {/* title */}

@@ -29,7 +29,6 @@ function BookmarkBtn({ data, mediaType, inCard = true }) {
                 mediaType: mediaType || data.mediaType,
                 posterPath: data.poster_path || data.posterPath,
             });
-            console.log(res);
         } catch (error) {
             console.log(error);
             if (error.response && error.response.status === 401) {
@@ -41,7 +40,6 @@ function BookmarkBtn({ data, mediaType, inCard = true }) {
     const unsaveBookmark = async () => {
         try {
             const res = await bookmarkService.unsave(data.id || data.mediaId);
-            console.log(res);
         } catch (error) {
             console.log(error);
             if (error.response && error.response.status === 401) {

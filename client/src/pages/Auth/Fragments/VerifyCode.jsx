@@ -25,10 +25,7 @@ function VerifyCode({ onSwitch, authViews, currAuthContext, email }) {
             setCooldown(30);
             try {
                 const reqData = { email, currAuthContext };
-                const res = await authService.resendVerificationCode(reqData);
-                if (res.success) {
-                    console.log(res.message);
-                }
+                const res = await authService.resendVerificationCode(reqData);                
             } catch (error) {
                 console.log(error);
             }

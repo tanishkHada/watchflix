@@ -92,10 +92,8 @@ class DataService {
   async getMediaDetails(mediaType, mediaId) {
     try {
       const { data } = await this.api.get(`/details/${mediaType}/${mediaId}`);
-      console.log('in here')
       return data.results;
     } catch (error) {
-      console.log('in catch', error);
       throw error;
     }
   }

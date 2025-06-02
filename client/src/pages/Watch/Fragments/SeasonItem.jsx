@@ -6,9 +6,6 @@ import apiExtras from '../../../utils/ApiExtras.js'
 import { FaPlayCircle } from 'react-icons/fa'
 
 const SeasonItem = React.memo(({ data, index, isSelected, onClick }) => {
-
-    console.log(data);
-
     return (
         <div
             className={`relative flex gap-5 p-1 rounded-lg justify-start items-center bg-[var(--charcoal)] text-white ${isSelected ? 'selected-watch-item' : ''}`}
