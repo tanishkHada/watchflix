@@ -12,9 +12,11 @@ const useBookmarkViewModel = () => {
     const [noResultsFound, setNoResultsFound] = useState(false);
     const [noMoreData, setNoMoreData] = useState(false);
 
+    const [lastId, setLastId] = useState(null);
+
     const fetchBookmarkResults = async (pageNum) => {
         try {
-            const data = await bookmarkService.getAllBookmarks(pageNum);
+            const data = await bookmarkService.getAllBookmarks(pageNum, lastId);
             return data;
         } catch (error) {
             throw error;            
@@ -60,6 +62,12 @@ const useBookmarkViewModel = () => {
     useEffect(() => {
         fetchResults();
     }, [pageNum]);
+
+    useEffect(() => {
+        if(results.length > 0){
+            setLastId(results[results.length - 1]._id);
+        }
+    }, [results]);
 
     return {
         setPageNum,

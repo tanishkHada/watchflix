@@ -61,20 +61,24 @@ const getBookmarksByIds = async (req, res) => {
     }
 }
 
-const getAllBookmarks = async (req, res) => {
+const getAllBookmarks = async (req, res) => {    
     try {
         const userId = req.user.userId;
-
-        const pageNum = parseInt(req.query.pageNum) || 1;
         const limit = 20;
-        const skip = (pageNum - 1) * limit;
+        const lastId = req.query.lastId;
 
-        const bookmarks = await Bookmark.find({ userId })
-            .skip(skip)
-            .limit(limit)
+        const query = { userId };
+        if (lastId) {
+            query._id = { $lt: lastId }; 
+        }
+
+        const bookmarks = await Bookmark.find(query)
+            .sort({ _id: -1 }) 
+            .limit(limit);
 
         res.status(200).json({ success: true, results: bookmarks });
     } catch (error) {
+        console.error(error);
         res.status(500).json({ message: 'Error getting bookmarks' });
     }
 }

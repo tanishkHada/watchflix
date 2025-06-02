@@ -12,6 +12,11 @@ function BookmarkBtn({ data, mediaType, inCard = true }) {
     const notInCardClasses = "bg-black p-3 text-[18px] text-[var(--lime-green)] rounded-lg cursor-pointer";
 
     const [bookmarked, setBookmarked] = useState(data.bookmarked);
+    const resolvedId = data.id || data.mediaId;
+
+    useEffect(() => {
+        setBookmarked(data.bookmarked);
+    }, [resolvedId]);
 
     useEffect(() => {
         setBookmarked(data.bookmarked);
@@ -45,14 +50,11 @@ function BookmarkBtn({ data, mediaType, inCard = true }) {
         }
     }
 
-    const toggleBoomark = useDebounce(() => {
-        let saving;
-        setBookmarked(prev => {
-            saving = !prev;
-            return saving;
-        });
+    const toggleBookmark = useDebounce(() => {
+        const newState = !bookmarked;      
+        setBookmarked(newState);          
 
-        if (saving) {
+        if (newState) {
             saveBookmark();
         } else {
             unsaveBookmark();
@@ -62,7 +64,7 @@ function BookmarkBtn({ data, mediaType, inCard = true }) {
     return (
         <div
             className={inCard ? `${inCardClasses}` : `${notInCardClasses}`}
-            onClick={toggleBoomark}
+            onClick={toggleBookmark}
         >
             {bookmarked ? <FaBookmark /> : <FaRegBookmark />}
         </div>

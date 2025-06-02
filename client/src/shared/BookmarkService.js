@@ -37,11 +37,12 @@ class BookmarkService {
     }
   }
 
-  async getAllBookmarks(pageNum){
+  async getAllBookmarks(pageNum, lastId){
     try {
       const {data} = await this.api.get('/all', {
         params: {
-          pageNum: pageNum
+          pageNum: pageNum,
+          lastId: lastId
         },
         withCredentials: true
       });
