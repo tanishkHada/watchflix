@@ -3,10 +3,15 @@ import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 import PendingUser from '../models/PendingUser.js';
 import verificationService from '../services/verificationService.js';
+import validators from '../utils/validators.js';
 
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
+
+        validators.isValidEmail(email);
+        validators.isValidPassword(password);
+
         const user = await User.findOne({ email });
 
         if(!user){
@@ -44,6 +49,10 @@ const register = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
+        validators.isValidName(name);
+        validators.isValidEmail(email);
+        validators.isValidPassword(password);
+
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: 'User already exists' });
@@ -68,6 +77,10 @@ const verify = async (req, res) => {
     try {
         const { email, code, currAuthContext } = req.body;
 
+        validators.isValidEmail(email);
+        validators.isValidCode(code);
+        validators.isValidAuthContext(currAuthContext);
+
         await verificationService.verifyCode(email, code, currAuthContext);
 
         switch(currAuthContext) {
@@ -86,6 +99,10 @@ const verify = async (req, res) => {
 const resendVerificationCode = async (req, res) => {
     try {
         const { email, currAuthContext } = req.body;
+
+        validators.isValidEmail(email);
+        validators.isValidAuthContext(currAuthContext);
+
         await verificationService.createVerification(email, currAuthContext);
         res.status(200).json({success: true, message: 'Resent verfification email'});
     } catch (error) {
@@ -96,6 +113,8 @@ const resendVerificationCode = async (req, res) => {
 const forgotPassword = async (req, res) => {
     try {
         const { email } = req.body;
+
+        validators.isValidEmail(email);
 
         const user = await User.findOne({ email });
         if (!user) {
@@ -112,6 +131,9 @@ const forgotPassword = async (req, res) => {
 const resetPassword = async (req, res) => {
     try {
         const { email, newPassword } = req.body;
+
+        validators.isValidEmail(email);
+        validators.isValidPassword(newPassword);
 
         const hashedPassword = await bcrypt.hash(newPassword, 10);
         await User.findOneAndUpdate(
