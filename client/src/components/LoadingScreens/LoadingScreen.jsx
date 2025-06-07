@@ -31,7 +31,7 @@ const LoadingScreen = ({ isVisible, onExitComplete }) => {
     <AnimatePresence onExitComplete={onExitComplete}>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 bg-[var(--dark-void)] flex items-center justify-center z-50"
+          className="fixed inset-0 bg-[var(--dark-void)] flex items-center justify-center z-50 select-none"
           variants={loadingVariants}
           initial="initial"
           animate="animate"

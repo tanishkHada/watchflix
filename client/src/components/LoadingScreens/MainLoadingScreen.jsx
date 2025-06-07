@@ -75,7 +75,7 @@ function MainLoadingScreen({ onCompleteAnim }) {
   }, []);
 
   return (
-    <div className="loader w-full h-screen bg-[var(--lime-green)] overflow-hidden">
+    <div className="loader w-full h-screen bg-[var(--lime-green)] overflow-hidden select-none">
       <div className="loader-clip clip-top bg-[var(--dark-void)] absolute w-screen h-[33.3vh] overflow-clip top-0"
         style={{ clipPath: 'inset(0 0 0 0)' }}
       >
