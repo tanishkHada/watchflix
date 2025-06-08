@@ -93,7 +93,7 @@ function VerifyCode({ onSwitch, authViews, currAuthContext, email }) {
                     <ActionButton
                         btnText1={'BACK'}
                         btnText2={'BACK'}
-                        onClickButton={() => (onNavigate(redirectTo))}
+                        onClickButton={() => (onSwitch(authViews.LOGIN))}
                         bgColor='var(--hot-pink)'
                     />
 
