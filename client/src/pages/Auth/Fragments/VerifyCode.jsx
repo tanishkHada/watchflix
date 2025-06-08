@@ -87,21 +87,7 @@ function VerifyCode({ onSwitch, authViews, currAuthContext, email }) {
                         required
                         className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
                     />
-                </div>
-                {/* <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition cursor-pointer"
-                >
-                    {loading ? <Loader/> : "SUBMIT"}
-                </button>
-                <button
-                    type='button'
-                    onClick={() => (onSwitch(authViews.LOGIN))}
-                    className="w-full border-2 mt-2 border-black text-black py-2 px-4 rounded hover:border-blue-600 transition cursor-pointer"
-                >
-                    BACK
-                </button> */}
+                </div>                
 
                 {!loading ? (<div className='flex justify-center items-center gap-5'>
                     <ActionButton

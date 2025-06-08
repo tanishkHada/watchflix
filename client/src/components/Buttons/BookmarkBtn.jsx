@@ -18,10 +18,6 @@ function BookmarkBtn({ data, mediaType, inCard = true }) {
         setBookmarked(data.bookmarked);
     }, [resolvedId]);
 
-    useEffect(() => {
-        setBookmarked(data.bookmarked);
-    }, [data.id]);
-
     const saveBookmark = async () => {
         try {
             const res = await bookmarkService.save({

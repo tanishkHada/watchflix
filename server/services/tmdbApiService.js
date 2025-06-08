@@ -8,20 +8,9 @@ const headers = {
     accept: "application/json",
 };
 
-// const api = axios.create({
-//     baseURL: process.env.BASE_URL,
-//     headers: headers
-// });
-
 const api = axios.create({
-  baseURL: process.env.BASE_URL,
-  httpsAgent: new https.Agent({ keepAlive: true }), 
-  headers: {
-    'Accept': 'application/json',
-    'Authorization': `Bearer ${process.env.TMDB_API_KEY}`,
-    'Accept-Encoding': 'gzip, deflate, br',
-    'User-Agent': 'watchflix'
-  }
+    baseURL: process.env.BASE_URL,
+    headers: headers
 });
 
 const getMediaData = async (mediaType, category) => {
