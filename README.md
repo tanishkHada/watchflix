@@ -1,6 +1,6 @@
 # WATCHFLIX
 
-**WatchFlix** is your ultimate destination to stream Movies and TV Shows for free.Enjoy a vast library of content, bookmark favorites, and explore by genre in a beautifully animated and responsive UI.
+**WatchFlix** is your ultimate destination to stream Movies and TV Shows for free. Enjoy a vast library of content, bookmark favorites, and explore by genre in a beautifully animated and responsive UI.
 
 > Sit back, relax, and start streaming!
 
